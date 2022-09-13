@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "removeComments": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "sourceMap": false,
+    "target": "es2019",
+    "types": ["node", "webdriverio/async", "@wdio/cucumber-framework"],
+    "paths": {
+      "@helpers/*": ["./src/helpers/*"],
+      "@pageObjects/*": ["./src/pageObjects/*"],
+      "@screenObjects/*": ["./src/screenObjects/*"],
+      "@database/*": ["./src/database/*"],
+      "@interfaces/*": ["./src/interfaces/*"]
+    },
+  }
+}

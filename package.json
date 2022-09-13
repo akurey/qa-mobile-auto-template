@@ -1,0 +1,70 @@
+{
+  "name": "automation-fw",
+  "version": "1.1.2",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "android": "./node_modules/.bin/wdio global.conf.ts --platform=android --cucumberOpts.tagExpression='not @skip'",
+    "android:dev": "./node_modules/.bin/wdio global.conf.ts --platform=android --cucumberOpts.tagExpression='@Dev'",
+    "ios": "./node_modules/.bin/wdio global.conf.ts --platform=ios --cucumberOpts.tagExpression='not @skip'",
+    "ios:dev": "./node_modules/.bin/wdio global.conf.ts --platform=ios --cucumberOpts.tagExpression='@Dev'",
+    "lint": "eslint src --ext js --no-ignore --fix"
+  },
+  "dependencies": {
+    "@cucumber/cucumber": "8.5.3",
+    "@typescript-eslint/eslint-plugin": "5.37.0",
+    "@typescript-eslint/parser": "5.37.0",
+    "@wdio/appium-service": "7.24.0",
+    "@wdio/cli": "7.24.0",
+    "@wdio/config": "7.24.0",
+    "@wdio/cucumber-framework": "7.24.0",
+    "@wdio/local-runner": "7.24.0",
+    "@wdio/spec-reporter": "7.24.0",
+    "@wdio/types": "7.24.0",
+    "axios": "0.27.2",
+    "chai": "4.3.6",
+    "crypto-js": "4.1.1",
+    "dotenv": "16.0.2",
+    "eslint-config-prettier": "8.5.0",
+    "faker": "6.6.6",
+    "fs-extra": "10.1.0",
+    "gherkin-lint": "4.2.2",
+    "husky": "8.0.1",
+    "lint-staged": "13.0.3",
+    "multiple-cucumber-html-reporter": "2.0.0",
+    "mysql": "2.18.1",
+    "prettier": "2.7.1",
+    "wdio-cucumberjs-json-reporter": "4.4.3",
+    "webdriverio": "7.24.0",
+    "yargs": "17.5.1"
+  },
+  "devDependencies": {
+    "@types/chai": "4.3.3",
+    "appium": "1.22.3",
+    "chromedriver": "105.0.0",
+    "eslint": "8.23.1",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-wdio": "7.21.0",
+    "ts-node": "10.9.1",
+    "tsconfig-paths": "4.1.0",
+    "typescript": "4.8.3",
+    "wdio-chromedriver-service": "7.3.2"
+  },
+  "lint-staged": {
+    "./src/**/*.page.{ts,js}": [
+      "eslint --max-warnings 0",
+      "prettier --write"
+    ],
+    "./src/**/*.{ts,js}": [
+      "eslint --max-warnings 0"
+    ],
+    "./src/**/*.{ts,js,json}": [
+      "prettier --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint-staged && yarn gherkin-lint"
+    }
+  }
+}
