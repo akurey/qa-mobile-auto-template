@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@cucumber/cucumber": "8.6.0",
-    "@typescript-eslint/eslint-plugin": "5.39.0",
-    "@typescript-eslint/parser": "5.39.0",
+    "@typescript-eslint/eslint-plugin": "5.40.0",
+    "@typescript-eslint/parser": "5.40.0",
     "@wdio/appium-service": "7.25.1",
     "@wdio/cli": "7.25.1",
     "@wdio/config": "7.25.1",

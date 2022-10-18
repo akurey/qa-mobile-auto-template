@@ -28,10 +28,10 @@ export const iOSMetadata = {
 
 export const androidMetadata = {
   'cjson:metadata': {
-    device: 'Pixel 3XL',
+    device: 'Pixel 2 API 30',
     platform: {
       name: 'Android',
-      version: '10.0',
+      version: '11.0',
     },
     app: {
       name: 'My Project - Android',
